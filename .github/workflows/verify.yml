@@ -1,0 +1,19 @@
+name: Verify Lab 2 environment
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install classroom tools
+        run: sudo apt-get update && sudo apt-get install -y nano less coreutils diffutils
+      - name: Check environment and tools
+        run: bash scripts/verify_environment.sh
+      - name: Check configuration and startup extension
+        run: |
+          python3 -m json.tool .devcontainer/devcontainer.json > /dev/null
+          python3 -m json.tool .vscode/settings.json > /dev/null
+          python3 -m json.tool .devcontainer/terminal-startup/package.json > /dev/null
+          node --check .devcontainer/terminal-startup/extension.js
