@@ -4,6 +4,7 @@ import fcntl
 import os
 from pathlib import Path
 import pty
+import re
 import select
 import signal
 import struct
@@ -37,7 +38,8 @@ class Session:
                 if not part:
                     break
                 data+=part
-                if needle in data:
+                plain=re.sub(rb'\x1b\[[0-?]*[ -/]*[@-~]',b'',data)
+                if needle in plain:
                     return data
         raise AssertionError(f'Terminal did not show {needle!r}: {data[-1500:]!r}')
 
