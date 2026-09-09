@@ -11,6 +11,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y nano less coreutils diffutils
       - name: Check environment and tools
         run: bash scripts/verify_environment.sh
+      - name: Check interactive Bash, nano, and less
+        run: python3 -u -B scripts/interactive_smoke.py
       - name: Check configuration and startup extension
         run: |
           python3 -m json.tool .devcontainer/devcontainer.json > /dev/null

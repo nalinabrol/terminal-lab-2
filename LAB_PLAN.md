@@ -1,7 +1,6 @@
 # Lab 2 exercise and page plan
 
-Planning draft, including the requested history exercise. Final lab content and PDF
-are pending. Estimated duration: 98 minutes (approximately 100), not yet student-piloted.
+Implemented booklet plan, including the requested history exercise. Estimated duration: 98 minutes (approximately 100), not yet student-piloted.
 
 Theme: Clean up the campus event records.
 Pattern: predict, try, inspect, explain, complete a small independent task.
@@ -18,7 +17,7 @@ Pattern: predict, try, inspect, explain, complete a small independent task.
 | 8 | diff | Compare identical and changed files; identify additions, removals, and changes; repair a working copy and compare again. | 10 |
 | 9 | Independent challenge: mission | Fresh files: discover approved details, edit an announcement, extract and deduplicate names, count workshop registrations, compare schedules. | 17 across pages 9–10 |
 | 10 | Independent challenge: evidence | Output checklist and short explanations of sorting before deduplication, field selection, and schedule differences. | Included above |
-| 11 | Check and explain | Proposed read-only deliverable checker plus understanding questions and sampled live demonstrations of interactive skills. | 10 |
+| 11 | Check and explain | Read-only deliverable checker plus understanding questions and sampled live demonstrations of interactive skills. | 10 |
 | 12 | Hints | Progressively stronger hints grouped by exercise; no full challenge solution. | Reference |
 | 13 | Command reference | The seven topic groups, essential nano/less/history keys, and familiar commands only within combined examples. | Reference |
 
@@ -31,4 +30,4 @@ Pattern: predict, try, inspect, explain, complete a small independent task.
 - Challenge inputs are self-contained so earlier unfinished work does not block participation.
 - No setup step should erase an existing student attempt or command history.
 - A file checker can assess saved results but cannot prove nano/less/history use or independent authorship.
-- Before authoring the PDF, settle the final timing and develop/verify the datasets and exercises.
+- The final booklet, datasets and 16-result checker follow this plan. See VALIDATION.md for verification evidence.

@@ -2,49 +2,69 @@
 
 [Open your Lab 2 Codespace](https://codespaces.new/nalinabrol/terminal-lab-2?quickstart=1)
 
-Sign in with your own GitHub account and create your own Codespace on `main`.
-Resume that same Codespace for later sessions. This repository is separate from Lab 1.
+This repository is private. Students need repository access before this link will
+work. Sign in with your own GitHub account and create a Codespace on `main`, or
+resume your existing Lab 2 Codespace. Lab 1 uses a separate repository.
 
-## Current status
+## Start the lab
 
-The development environment is configured. The exercise plan is in [LAB_PLAN.md](LAB_PLAN.md).
-The final exercises, student data generator, checker, and PDF have not been authored yet.
+1. Wait for setup. Accept **Trust Folder & Continue** if asked.
+2. A maximized Bash terminal opens after startup. If needed, use the Command
+   Palette command **Lab 2: Focus Bash Terminal**.
+3. At the repository root, run `bash terminal-lab-2/start.sh`.
+4. Enter your instructor-assigned ID, run the exact `cd` command printed by setup,
+   then run `pwd` and `cat identity.txt`.
+5. Follow the [student booklet](Lab_2_Terminal_Tools_Student_Booklet.pdf).
 
-## First launch
+Setup preserves existing attempts. Generated work stays in the ignored `lab-work/`
+folder. Keep your Codespace and attempts for instructor review.
 
-1. Follow the Codespace link above and wait for setup to finish.
-2. Accept **Trust Folder & Continue** if prompted for this course repository.
-3. A maximized Bash terminal should open automatically after extension activation.
-4. Check the environment at any time with `bash scripts/verify_environment.sh`.
+## Materials
 
-If necessary, use the Command Palette command **Lab 2: Focus Bash Terminal**.
-The startup extension focuses the terminal without typing commands or resetting work.
+- [Student booklet PDF](Lab_2_Terminal_Tools_Student_Booklet.pdf): 13 A4 pages,
+  seven experiments, independent challenge, answer spaces, hints and reference.
+- [Booklet text](Lab_2_Terminal_Tools_Student_Booklet.md): searchable text counterpart.
+- [Practice kit ZIP](Lab_2_Terminal_Tools_Practice_Kit.zip): the same three runtime
+  files already included in `terminal-lab-2/`; no download is needed in Codespaces.
+- [Instructor guide](INSTRUCTOR_GUIDE.md): timing, setup, facilitation and answer checks.
+- [Page plan](LAB_PLAN.md): the implemented structure and scope.
 
-## Topics
+Topics: history and history search, nano, less, sort, uniq, cut, and diff.
+Permissions and environment-variable lessons are reserved for class.
 
-- Command history: `history`, filtering history, Ctrl+R, editing recalled commands, Ctrl+G.
-- Editing text: `nano`.
-- Navigating long documents: `less`.
-- Sorting text and numbers: `sort`.
-- Removing and counting duplicates: `uniq`.
-- Extracting fields: `cut`.
-- Comparing file versions: `diff`.
+## Check saved work
 
-Permissions and environment variables are reserved for classroom teaching.
-Lab 1 commands support the new exercises without repeating their introductory lessons.
+From your `lab-work/lab2-ID` folder:
 
-## Environment
+```bash
+python3 ../../terminal-lab-2/check.py
+```
 
-Ubuntu 24.04 devcontainer, Bash, Python 3, nano, less, GNU coreutils, diffutils,
-grep, and manual pages. Required tools and text-processing behaviours are checked
-automatically during container creation and through GitHub Actions.
+The checker reads 15 result files and checks preservation of original evidence
+(16 checks). It does not repair, upload or submit work. Written explanations and
+interactive demonstrations remain part of the lab.
 
-Workspace defaults hide the editor/sidebar and disable AI chat, Copilot completions,
-next-edit suggestions, and inline suggestions. Students can change these settings;
-they are classroom defaults, not an enforcement mechanism.
+## Environment and validation
 
-Future student attempts will use the ignored `lab-work/` folder. Shell history is
-the student's own interactive Bash history; setup does not seed or clear it.
-Interactive history search will be verified during the exercise using commands
-students type themselves. History persistence across terminal sessions is outside
-the current lab scope.
+Ubuntu 24.04, Bash, Python 3, nano, less, GNU coreutils, diffutils, grep and manual
+pages. The runtime uses Python's standard library and normal shell commands.
+
+```bash
+bash scripts/verify_environment.sh
+python3 -B scripts/interactive_smoke.py
+```
+
+The first command validates tools and all four student variants in temporary
+folders. The second checks Bash history, nano and less in isolated terminals.
+Neither modifies student attempts. Both run in GitHub Actions.
+
+Workspace defaults hide sidebars and disable AI chat and suggestions; students can
+change them. The startup extension does not type commands or erase history.
+
+## Authoring
+
+`build_booklet.py` builds the PDF and Markdown using ReportLab. It uses Arial on
+macOS or DejaVu fonts on Linux (install `fonts-dejavu-core` when needed). Render and
+inspect all 13 pages after layout/content edits. `verify_lab.py` independently checks
+file workflows. Generator, checker and verification source are visible practice
+materials, not exam security mechanisms. See [validation evidence](VALIDATION.md).
