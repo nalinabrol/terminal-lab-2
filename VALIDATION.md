@@ -21,10 +21,25 @@ Prepared on 9 September 2026. The repository remains private.
   inspected; the revised sorting page was rendered and inspected again. Page numbers,
   headings, code blocks and answer spaces fit the intended page plan.
 
+## Linux and Codespace checks
+
+- GitHub Actions passed on runtime commit `2d07c8f`:
+  https://github.com/nalinabrol/terminal-lab-2/actions/runs/34309481171
+- In the existing Ubuntu 24.04 review Codespace, pulled `main` with a fast-forward
+  update, then ran the full readiness check and interactive terminal smoke suite.
+  All four 16/16 workflows and Bash/nano/less checks passed.
+- Browser review confirmed the maximized Bash terminal and hidden sidebars/AI chat.
+  The student-facing start.sh prompted for an ID and created DEMO-LAB2 under
+  `/workspaces/terminal-lab-2/lab-work/lab2-DEMO-LAB2`. It is an unsolved review attempt.
+- Browser key injection did not visibly trigger Ctrl+R. Actual Ctrl+R/Ctrl+G bytes
+  passed in isolated Bash terminals inside the Codespace, but this is not a claim
+  that every browser/physical-keyboard combination was tested. The instructor guide
+  includes a browser shortcut preflight and the history-list fallback.
+
 ## Scope of this evidence
 
-Interactive terminal automation tests the actual programs. Browser UI verification
-and the current GitHub Actions result are recorded after repository publication.
+Interactive terminal automation tests the actual programs. Browser startup and the
+student setup flow were also checked as described above.
 No student classroom pilot has been performed, so the approximately 100-minute
 duration remains an estimate. The checker verifies results, not authorship or whether
 the student used the requested interactive tool.
